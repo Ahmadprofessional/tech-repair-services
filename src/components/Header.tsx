@@ -48,7 +48,7 @@ export function Header() {
         isHidden && !menuOpen ? "-translate-y-full" : "translate-y-0"
       } ${
         isScrolled || menuOpen 
-          ? "bg-ink border-b border-line-dark" 
+          ? "bg-[#111111] border-b border-line-dark" 
           : "bg-transparent border-transparent"
       }`}
     >
@@ -74,7 +74,7 @@ export function Header() {
               </svg>
             </button>
             <div className="absolute top-full left-0 hidden group-hover:block pt-4">
-              <div className="bg-ink border border-line-dark p-6 flex flex-col gap-4 shadow-xl min-w-[240px]">
+              <div className="bg-[#111111] border border-line-dark p-6 flex flex-col gap-4 shadow-xl min-w-[240px]">
                 {services.map((service) => (
                   <Link
                     key={service.slug}
@@ -97,9 +97,8 @@ export function Header() {
           <WhatsAppButton className="ml-2 py-2 px-4 text-xs" />
         </nav>
 
-        {/* Mobile: WhatsApp + Hamburger */}
+        {/* Mobile: Hamburger only (WhatsApp moved to menu) */}
         <div className="flex items-center gap-3 md:hidden z-50 relative">
-          <WhatsAppButton className="py-2 px-3 text-xs" />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex flex-col gap-1 p-2"
@@ -107,17 +106,17 @@ export function Header() {
             aria-expanded={menuOpen}
           >
             <span
-              className={`block h-px w-5 bg-paper transition-transform duration-200 ${
+              className={`block h-px w-5 bg-[#F5F3EC] transition-transform duration-200 ${
                 menuOpen ? "translate-y-[5px] rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-px w-5 bg-paper transition-opacity duration-200 ${
+              className={`block h-px w-5 bg-[#F5F3EC] transition-opacity duration-200 ${
                 menuOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-px w-5 bg-paper transition-transform duration-200 ${
+              className={`block h-px w-5 bg-[#F5F3EC] transition-transform duration-200 ${
                 menuOpen ? "-translate-y-[5px] -rotate-45" : ""
               }`}
             />
@@ -127,7 +126,7 @@ export function Header() {
 
       {/* Mobile menu - full screen, solid ink */}
       <div
-        className={`fixed inset-0 z-40 bg-ink pt-[72px] transition-transform duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 bg-[#111111] pt-[96px] transition-transform duration-300 md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -137,13 +136,13 @@ export function Header() {
         >
           <ul className="flex flex-col gap-8">
             <li>
-              <span className="font-mono-label text-sm text-line-light block mb-4">Services</span>
+              <span className="font-mono-label text-sm text-[#BDBAB0] block mb-4">Services</span>
               <ul className="flex flex-col gap-6 pl-4 border-l border-line-dark">
                 {services.map((service) => (
                   <li key={service.slug}>
                     <Link
                       href={`/services/${service.slug}`}
-                      className="font-mono-label text-xl text-paper transition-colors hover:text-accent"
+                      className="font-mono-label text-xl text-[#F5F3EC] transition-colors hover:text-accent"
                       onClick={() => setMenuOpen(false)}
                     >
                       {service.title}
@@ -155,11 +154,14 @@ export function Header() {
             <li>
               <Link
                 href="/contact"
-                className="font-mono-label text-xl text-paper transition-colors hover:text-accent"
+                className="font-mono-label text-xl text-[#F5F3EC] transition-colors hover:text-accent"
                 onClick={() => setMenuOpen(false)}
               >
                 Contact
               </Link>
+            </li>
+            <li className="pt-8 mt-4 border-t border-line-dark">
+              <WhatsAppButton className="w-full justify-center py-4" />
             </li>
           </ul>
         </nav>
