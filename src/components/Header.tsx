@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { services } from "@/data/services";
@@ -11,6 +12,12 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const lastScrollY = useRef(0);
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
+  const isDarkHeader = isScrolled || menuOpen;
+  const textColor = isDarkHeader || isHomePage ? "text-[#F5F3EC]" : "text-[#111111]";
+  const hamburgerColor = isDarkHeader || isHomePage ? "bg-[#F5F3EC]" : "bg-[#111111]";
 
   // Scroll listener
   useEffect(() => {
@@ -57,7 +64,7 @@ export function Header() {
         {/* Wordmark */}
         <Link
           href="/"
-          className="font-headline text-lg tracking-tight text-[#F5F3EC] z-50 relative"
+          className={`font-headline text-lg tracking-tight ${textColor} z-50 relative transition-colors duration-300`}
           aria-label={`${siteConfig.name} home`}
           onClick={() => setMenuOpen(false)}
         >
@@ -68,7 +75,7 @@ export function Header() {
         <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
           {/* Services Dropdown */}
           <div className="relative group py-4">
-            <button className="font-mono-label text-[#F5F3EC] transition-colors hover:text-accent flex items-center gap-1">
+            <button className={`font-mono-label ${textColor} transition-colors hover:text-accent flex items-center gap-1`}>
               Services
               <svg width="10" height="10" viewBox="0 0 10 10" className="opacity-50 transition-transform group-hover:rotate-180">
                 <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" fill="none" strokeWidth="1.5" />
@@ -91,7 +98,7 @@ export function Header() {
 
           <Link
             href="/contact"
-            className="font-mono-label text-[#F5F3EC] transition-colors hover:text-accent"
+            className={`font-mono-label ${textColor} transition-colors hover:text-accent`}
           >
             Contact
           </Link>
@@ -107,17 +114,17 @@ export function Header() {
             aria-expanded={menuOpen}
           >
             <span
-              className={`block h-px w-5 bg-[#F5F3EC] transition-transform duration-200 ${
+              className={`block h-px w-5 ${hamburgerColor} transition-all duration-300 ${
                 menuOpen ? "translate-y-[5px] rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-px w-5 bg-[#F5F3EC] transition-opacity duration-200 ${
+              className={`block h-px w-5 ${hamburgerColor} transition-all duration-300 ${
                 menuOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-px w-5 bg-[#F5F3EC] transition-transform duration-200 ${
+              className={`block h-px w-5 ${hamburgerColor} transition-all duration-300 ${
                 menuOpen ? "-translate-y-[5px] -rotate-45" : ""
               }`}
             />
