@@ -1,0 +1,214 @@
+@import "tailwindcss";
+@source "../";
+
+/* ── Design Tokens ── */
+@theme {
+  /* Palette */
+  --color-ink: #111111;
+  --color-paper: #EDEBE4;
+  --color-accent: #FFD400;
+  --color-line-dark: #2B2B2B;
+  --color-line-light: #C9C6BC;
+  --color-muted: #7A786F;
+  --color-rec: #E5322D;
+
+  /* Fonts (set by next/font CSS vars) */
+  --font-sans: var(--font-archivo-var), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono-var), ui-monospace, monospace;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  line-height: 1.5;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Typography Utility ── */
+.font-mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-headline {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+.font-headline-condensed {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+}
+
+.font-headline-expanded {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-stretch: 125%;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+}
+
+/* ── Section alternation ── */
+.section-ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.section-paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* ── REC dot blink ── */
+@keyframes blink-rec {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-rec {
+  animation: blink-rec 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rec {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ── Scan-line effect ── */
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-scan-line {
+  animation: scan-line 2s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scan-line {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* ── Custom cursor (desktop only) ── */
+@media (pointer: fine) {
+  .cursor-viewfinder,
+  .cursor-viewfinder * {
+    cursor: none !important;
+  }
+}
+
+.cursor-locked svg {
+  width: 56px !important;
+  height: 56px !important;
+}
+
+/* ── Smooth scroll (Lenis requires html height) ── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-dark);
+}
+
+/* ── Marker / registration marks ── */
+.marker-bracket {
+  --bracket-size: 12px;
+  --bracket-weight: 1px;
+  --bracket-color: var(--color-line-light);
+  position: relative;
+}
+
+.marker-bracket::before,
+.marker-bracket::after {
+  content: "";
+  position: absolute;
+  width: var(--bracket-size);
+  height: var(--bracket-size);
+  border-color: var(--bracket-color);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.marker-bracket::before {
+  top: 0;
+  left: 0;
+  border-width: var(--bracket-weight) 0 0 var(--bracket-weight);
+}
+
+.marker-bracket::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 var(--bracket-weight) var(--bracket-weight) 0;
+}
+
+.marker-bracket-ink {
+  --bracket-color: var(--color-line-dark);
+}
+
+/* Accent highlight block — for text on paper bg */
+.accent-highlight {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  padding: 0.125em 0.375em;
+  display: inline-block;
+}
