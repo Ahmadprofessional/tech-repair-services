@@ -43,6 +43,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
+    <>
     <header 
       className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300 ${
         isHidden && !menuOpen ? "-translate-y-full" : "translate-y-0"
@@ -123,6 +124,7 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
       {/* Mobile menu - full screen, solid ink */}
       <div
@@ -166,6 +168,6 @@ export function Header() {
           </ul>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
