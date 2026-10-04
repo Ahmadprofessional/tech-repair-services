@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "BRAND NAME",
+  name: "G Repair",
   tagline: "Repairs & CCTV in Milton Keynes",
   description:
     "Laptop repair, mobile phone repair, and CCTV camera installation across Milton Keynes and surrounding areas.",
-  url: "https://example.com",
+  url: "https://grepair.com",
   area: "Milton Keynes",
   nearbyAreas: [
     "Bletchley",
@@ -17,13 +17,13 @@ export const siteConfig = {
     "Towcester",
     "Bedford",
   ],
-  phone: "01908 000 000",
-  email: "hello@example.com",
+  phone: "07777168239",
+  email: "grepair90@gmail.com",
   address: {
-    street: "1 Example Street",
+    street: "49 Westhill Stantonbury",
     locality: "Milton Keynes",
     region: "Buckinghamshire",
-    postalCode: "MK1 1AA",
+    postalCode: "MK14 6BG",
     country: "GB",
   },
   social: {

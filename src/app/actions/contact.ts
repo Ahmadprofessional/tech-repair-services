@@ -48,8 +48,8 @@ export async function submitContactForm(
   // import { Resend } from 'resend';
   // const resend = new Resend(process.env.RESEND_API_KEY);
   // await resend.emails.send({
-  //   from: 'Website <noreply@yourdomain.com>',
-  //   to: ['your-email@example.com'],
+  //   from: 'Website <noreply@grepair.com>',
+  //   to: ['grepair90@gmail.com'],
   //   subject: `New enquiry from ${result.data.name}`,
   //   text: `Name: ${result.data.name}\nPhone: ${result.data.phone}\nService: ${result.data.service}\nMessage: ${result.data.message}`,
   // });
