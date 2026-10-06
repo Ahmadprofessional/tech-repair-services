@@ -32,6 +32,17 @@ export function ContactSection() {
               </p>
             </Reveal>
             <Reveal delay={0.3}>
+              <div className="mb-8 flex items-center gap-3 bg-paper/5 w-fit px-4 py-2 border border-line-dark">
+                <div className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+                </div>
+                <span className="font-mono-label text-paper text-xs tracking-widest">
+                  AVAILABLE 24/7 FOR CALLS & TEXTS
+                </span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.4}>
               <div className="flex flex-wrap items-center gap-4">
                 <WhatsAppButton />
                 <Link

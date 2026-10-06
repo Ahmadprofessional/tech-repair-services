@@ -27,6 +27,22 @@ export function ContactForm() {
 
   return (
     <form action={formAction} className="space-y-6" noValidate>
+      {/* 24/7 Prominent Banner */}
+      <div className="mb-6 flex items-center justify-between border-b border-line-light pb-6">
+        <div className="flex items-center gap-3">
+          <div className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
+          </div>
+          <span className="font-headline text-xl tracking-tight text-ink uppercase mt-1">
+            Call / Text 24/7
+          </span>
+        </div>
+        <span className="font-mono-label text-muted text-[10px] tracking-widest hidden sm:block">
+          ALWAYS AVAILABLE
+        </span>
+      </div>
+
       {/* Name */}
       <div>
         <label htmlFor="contact-name" className="font-mono-label text-muted block mb-2">
