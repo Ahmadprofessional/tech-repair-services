@@ -8,13 +8,13 @@ const steps = [
     number: "01",
     title: "Drop off",
     detail:
-      "Bring your device to our Milton Keynes workshop, or message us on WhatsApp to arrange a time.",
+      "Message us on WhatsApp or call us to arrange a repair.",
   },
   {
     number: "02",
     title: "Diagnose",
     detail:
-      "We inspect the device, identify the fault, and quote a fixed price. No charge if you decide not to proceed.",
+      "We inspect the device, identify the fault, and quote a fixed price.",
   },
   {
     number: "03",

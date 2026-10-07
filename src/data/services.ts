@@ -8,7 +8,7 @@ export const services: Service[] = [
     description:
       "Screen replacements, battery swaps, data recovery, and general diagnostics for all major brands.",
     longDescription:
-      "Cracked screen, dead battery, or a machine that won't start — we deal with it daily. Bring your laptop to our Milton Keynes workshop and we'll diagnose the fault, quote a fixed price, and get it back to you fast. No hourly rates, no surprises.",
+      "Cracked screen, dead battery, or a machine that won't start. We deal with it daily. We diagnose the fault, quote a fixed price, and get it back to you fast. No hourly rates, no surprises.",
     scope: [
       "Screen replacement (LCD & OLED)",
       "Battery replacement",
@@ -25,12 +25,12 @@ export const services: Service[] = [
       {
         step: "Drop off or post in",
         detail:
-          "Bring your laptop to our Milton Keynes workshop or send it via tracked post.",
+          "Message us on WhatsApp or call us to arrange your repair.",
       },
       {
         step: "Free diagnostic",
         detail:
-          "We inspect the machine and confirm the fault within 24 hours. No charge if you decide not to go ahead.",
+          "We inspect the machine and confirm the fault within 24 hours.",
       },
       {
         step: "Fixed-price repair",
@@ -49,7 +49,7 @@ export const services: Service[] = [
     description:
       "Same-day screen, battery, and port repairs for iPhone, Samsung, and most Android devices.",
     longDescription:
-      "Smashed screen? Battery draining by noon? We repair iPhones, Samsung Galaxy, Pixel, and most Android phones — often while you wait. We use quality parts and every repair comes with a warranty.",
+      "Smashed screen? Battery draining by noon? We repair iPhones, Samsung Galaxy, Pixel, and most Android phones. Often while you wait. We use quality parts.",
     scope: [
       "Screen replacement (OLED & LCD)",
       "Battery replacement",
@@ -66,12 +66,12 @@ export const services: Service[] = [
       {
         step: "Walk in or book ahead",
         detail:
-          "Visit our Milton Keynes workshop or message us on WhatsApp to book a slot.",
+          "Message us on WhatsApp or call us to book a repair slot.",
       },
       {
         step: "Quick assessment",
         detail:
-          "We check the phone, confirm the issue, and give you a firm price — usually within 15 minutes.",
+          "We check the phone, confirm the issue, and give you a firm price. Usually within 15 minutes.",
       },
       {
         step: "Same-day repair",
@@ -90,7 +90,7 @@ export const services: Service[] = [
     description:
       "Professional CCTV camera setup for homes and small businesses across Milton Keynes.",
     longDescription:
-      "We supply and install CCTV systems for homes and small businesses in Milton Keynes. From a single doorbell camera to a full multi-camera setup with remote viewing — we handle the survey, cabling, install, and handover.",
+      "We supply and install CCTV systems for homes and small businesses in Milton Keynes. From a single doorbell camera to a full multi-camera setup with remote viewing. We handle the survey, cabling, install, and handover.",
     scope: [
       "Home CCTV systems (2–8 cameras)",
       "Small business CCTV",

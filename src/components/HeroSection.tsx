@@ -103,18 +103,17 @@ export function HeroSection() {
           {/* Left: 7 cols */}
           <div ref={headlineRef} className="col-span-1 lg:col-span-7 flex flex-col">
             <h1 className="font-headline-condensed text-[#F5F3EC] text-[clamp(3rem,7vw,7.5rem)] leading-[0.95]">
-              <span className="block">We fix</span>
+              <span className="block">Broken Tech?</span>
               <span className="block">
-                your <span className="inline-block bg-accent text-ink px-[0.18em] py-[0.08em] whitespace-nowrap">tech</span>.
+                Get it <span className="inline-block bg-accent text-ink px-[0.18em] py-[0.08em] whitespace-nowrap">Fixed Fast.</span>
               </span>
               <span className="mt-2 block text-[clamp(1.5rem,4vw,3.5rem)] font-headline leading-[1]">
-                We watch your property.
+                Plus pro CCTV installs.
               </span>
             </h1>
 
             <p className="mt-6 max-w-[520px] text-base text-[#D6D3C9] leading-relaxed lg:text-lg">
-              Laptop repair, phone repair, and CCTV installation
-              across {siteConfig.area} and surrounding areas.
+              We fix laptop screens and phone batteries quickly and professionally. We quote a fixed price before starting work. No hourly rates.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 relative">
@@ -126,7 +125,7 @@ export function HeroSection() {
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                 className="font-mono-label text-[#F5F3EC] transition-colors hover:text-accent"
               >
-                or call {siteConfig.phone}
+                Or Call for a Fixed Quote
               </a>
             </div>
           </div>

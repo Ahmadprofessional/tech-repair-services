@@ -36,6 +36,17 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.name} Logo`,
+      },
+    ],
+  },
+  verification: {
+    google: "ADD_YOUR_GOOGLE_SEARCH_CONSOLE_TAG_HERE",
   },
   robots: {
     index: true,

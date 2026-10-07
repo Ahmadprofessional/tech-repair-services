@@ -18,7 +18,7 @@ export function ContactForm() {
             Message sent.
           </h3>
           <p className="text-muted">
-            We&apos;ll get back to you shortly — usually within a few hours.
+            We&apos;ll get back to you shortly. Usually within a few hours.
           </p>
         </div>
       </Marker>

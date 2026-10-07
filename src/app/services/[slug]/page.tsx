@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.metaTitle,
     description: service.description,
+    alternates: {
+      canonical: `/services/${resolvedParams.slug}`,
+    },
   };
 }
 

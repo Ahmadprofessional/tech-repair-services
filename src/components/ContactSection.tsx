@@ -26,9 +26,7 @@ export function ContactSection() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-base text-muted leading-relaxed max-w-md mb-8">
-                WhatsApp is the fastest way to reach us. Describe the problem,
-                send a photo if you can, and we'll reply with a quote — usually
-                within the hour.
+                WhatsApp is the fastest way to reach us. Send a photo of the problem. We will reply with a fixed quote within the hour.
               </p>
             </Reveal>
             <Reveal delay={0.3}>

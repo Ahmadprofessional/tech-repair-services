@@ -23,7 +23,7 @@ export function ServiceArea() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-base text-muted leading-relaxed max-w-md">
-                Our workshop is in {siteConfig.area}. We cover the whole MK area
+                We are based in {siteConfig.area} and cover the whole MK area
                 and regularly work in the surrounding towns. CCTV installations
                 are available across {siteConfig.area} and a 20-mile radius.
               </p>

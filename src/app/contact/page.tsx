@@ -6,6 +6,9 @@ import { Marker } from "@/components/Marker";
 export const metadata: Metadata = {
   title: "Get in Touch",
   description: `Contact ${siteConfig.name} for laptop repair, phone repair, and CCTV installation in ${siteConfig.area}.`,
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -25,7 +28,7 @@ export default function ContactPage() {
 
             <div className="space-y-8">
               <Marker variant="brackets" dark className="p-6">
-                <span className="font-mono-label text-line-dark block mb-2">WORKSHOP & POST</span>
+                <span className="font-mono-label text-line-dark block mb-2">ADDRESS</span>
                 <p className="text-ink">
                   {siteConfig.address.street}
                   <br />
@@ -34,7 +37,7 @@ export default function ContactPage() {
                   {siteConfig.address.postalCode}
                 </p>
                 <p className="text-sm text-muted mt-2">
-                  Drop-ins welcome, but please call ahead.
+                  Please call ahead to arrange a visit.
                 </p>
               </Marker>
               
