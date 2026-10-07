@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { services } from "@/data/services";
@@ -71,11 +73,23 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line-dark pt-6 md:flex-row md:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line-dark pt-6 md:flex-row md:items-center text-xs">
           <p className="font-mono-label text-muted">
             &copy; {new Date().getFullYear()} {siteConfig.name}
           </p>
-          <Marker variant="registration" />
+          <div className="flex flex-wrap items-center gap-4 text-muted">
+            <Link href="/privacy" className="hover:text-paper transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-paper transition-colors">Terms of Service</Link>
+            <button 
+              onClick={() => {
+                localStorage.removeItem("cookie-consent");
+                window.location.reload();
+              }}
+              className="hover:text-paper transition-colors cursor-pointer text-left"
+            >
+              Cookie Settings
+            </button>
+          </div>
         </div>
       </div>
     </footer>

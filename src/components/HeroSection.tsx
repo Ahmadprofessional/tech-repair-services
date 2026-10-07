@@ -41,7 +41,7 @@ export function HeroSection() {
       tl.fromTo(
         scanLine,
         { y: "-100%", opacity: 1 },
-        { y: "100%", opacity: 0.6, duration: 1.2, ease: "power2.inOut" }
+        { y: "100%", opacity: 0.6, duration: 0.4, ease: "power2.inOut" }
       );
 
       // Headline reveal with clip-path
@@ -54,10 +54,11 @@ export function HeroSection() {
         {
           opacity: 1,
           clipPath: "inset(0 0% 0 0)",
-          duration: 1,
+          duration: 0.35,
           ease: "power3.out",
+          clearProps: "all",
         },
-        "-=0.8"
+        "-=0.2"
       );
     };
 

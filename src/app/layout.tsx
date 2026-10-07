@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Cursor } from "@/components/Cursor";
 import { LenisProvider } from "@/components/LenisProvider";
 import { JsonLd } from "@/components/JsonLd";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </LenisProvider>
+        <CookieBanner />
         <JsonLd />
       </body>
     </html>

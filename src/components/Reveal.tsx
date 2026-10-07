@@ -42,7 +42,7 @@ export function Reveal({
       },
       {
         root: null,
-        rootMargin: "0px 0px -5% 0px", // Trigger slightly before it comes fully into view
+        rootMargin: "0px 0px 5% 0px", // Trigger early
         threshold: 0,
       }
     );
@@ -58,11 +58,11 @@ export function Reveal({
     if (isVisible || direction === "none") return "translate3d(0,0,0)";
     switch (direction) {
       case "up":
-        return "translate3d(0, 40px, 0)";
+        return "translate3d(0, 16px, 0)";
       case "left":
-        return "translate3d(-40px, 0, 0)";
+        return "translate3d(0, 16px, 0)"; // Mobile friendly vertical translation only
       case "right":
-        return "translate3d(40px, 0, 0)";
+        return "translate3d(0, 16px, 0)"; // Mobile friendly vertical translation only
       default:
         return "translate3d(0,0,0)";
     }
@@ -75,7 +75,7 @@ export function Reveal({
       style={{
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
-        transition: `opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
+        transition: `opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
         willChange: "opacity, transform",
       }}
     >

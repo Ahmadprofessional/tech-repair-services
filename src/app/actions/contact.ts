@@ -3,12 +3,12 @@
 import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  phone: z.string().min(6, "Please enter a valid phone number"),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100).regex(/^[a-zA-Z\s\-']+$/, "Invalid characters in name"),
+  phone: z.string().min(6, "Please enter a valid phone number").max(20).regex(/^[0-9+\s\-()]+$/, "Invalid phone format"),
   service: z.enum(["laptop-repair", "mobile-repair", "cctv-installation", "other"], {
     message: "Please select a service",
   }),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(1000),
 });
 
 export type ContactFormState = {
