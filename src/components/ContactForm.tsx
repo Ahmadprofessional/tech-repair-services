@@ -19,7 +19,7 @@ export function ContactForm() {
             Message sent.
           </h3>
           <p className="text-muted">
-            We&apos;ll get back to you shortly. Usually within a few hours.
+            Thank you! We&apos;ll get back to you shortly.
           </p>
         </div>
       </Marker>

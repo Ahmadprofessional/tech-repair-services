@@ -23,7 +23,7 @@ export default function ContactPage() {
               Let&apos;s get it sorted.
             </h1>
             <p className="text-lg text-muted mb-12 max-w-md">
-              Drop us a message below, or contact us directly. We aim to reply to all enquiries within a few hours.
+              Drop us a message below, or contact us directly. We aim to reply to all enquiries as soon as possible.
             </p>
 
             <div className="space-y-8">
