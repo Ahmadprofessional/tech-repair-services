@@ -10,8 +10,9 @@ export function Footer() {
     <footer className="section-ink border-t border-line-dark">
       <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-16 py-16">
         <div className="grid gap-12 md:grid-cols-3">
-          {/* Brand */}
+          {/* About */}
           <div>
+            <h3 className="font-mono-label text-line-light mb-4">About Gadget Repair</h3>
             <Link href="/" className="font-headline text-xl text-paper">
               {siteConfig.name}
             </Link>

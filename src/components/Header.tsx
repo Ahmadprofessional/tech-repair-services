@@ -66,7 +66,7 @@ export function Header() {
             <Link
               href="/"
               className={`flex items-center gap-3 transition-colors duration-300 ${textColor} hover:opacity-80`}
-              aria-label={`G Repair home`}
+              aria-label={`Gadget Repair home`}
               onClick={() => setMenuOpen(false)}
             >
               <LogoMark className="h-[44px] w-auto shrink-0" />

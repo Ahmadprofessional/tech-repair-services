@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  metadataBase: new URL("https://grepair.com"),
+  metadataBase: new URL("https://gadgetrepair.uk"),
   openGraph: {
     type: "website",
     locale: "en_GB",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { RecDot } from "@/components/RecDot";
 import { Marker } from "@/components/Marker";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -74,11 +75,12 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-ink/55 z-10 mix-blend-multiply" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop" 
-          alt="Circuit board background" 
-          className="w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" 
+          alt="Circuit board background"
+          fill
+          priority
+          className="object-cover grayscale opacity-40 mix-blend-luminosity" 
         />
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { submitContactForm, type ContactFormState } from "@/app/actions/contact";
 import { services } from "@/data/services";
 import { Marker } from "@/components/Marker";
@@ -136,6 +137,13 @@ export function ContactForm() {
       {state.errors?._form && (
         <p className="text-xs text-rec">{state.errors._form[0]}</p>
       )}
+
+      {/* ReCAPTCHA */}
+      <div className="flex justify-start">
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+        />
+      </div>
 
       {/* Submit */}
       <button

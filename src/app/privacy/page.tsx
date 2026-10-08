@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy and Data Protection guidelines for G Repair.",
+  description: "Privacy Policy and Data Protection guidelines for Gadget Repair.",
 };
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
           
           <h2>1. Data Controller</h2>
           <p>
-            G Repair ("we", "us", "our") is the Data Controller for the purposes of the General Data Protection Regulation (GDPR) and the UK Data Protection Act 2018.
+            Gadget Repair ("we", "us", "our") is the Data Controller for the purposes of the General Data Protection Regulation (GDPR) and the UK Data Protection Act 2018.
           </p>
 
           <h2>2. Lawful Bases for Processing</h2>
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
               <tbody>
                 <tr className="border-b border-line-light">
                   <td className="py-2 pr-4 font-mono">cookie-consent</td>
-                  <td className="py-2 pr-4">G Repair</td>
+                  <td className="py-2 pr-4">Gadget Repair</td>
                   <td className="py-2 pr-4">1 Year</td>
                   <td className="py-2 pr-4">Strictly Necessary: Remembers your consent preference.</td>
                 </tr>
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
 
           <h2>4. Data Subject Rights</h2>
           <p>
-            Under the GDPR, you have the right to Access, Rectification, Erasure, and Portability of your data. To exercise these rights, please contact us at grepair90@gmail.com. You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO).
+            Under the GDPR, you have the right to Access, Rectification, Erasure, and Portability of your data. To exercise these rights, please contact us at info@gadgetrepair.uk. You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO).
           </p>
         </div>
       </div>

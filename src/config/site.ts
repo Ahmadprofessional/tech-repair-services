@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "G Repair",
+  name: "Gadget Repair",
   tagline: "Repairs & CCTV in Milton Keynes",
   description:
-    "Laptop repair, mobile phone repair, and CCTV camera installation across Milton Keynes and surrounding areas.",
-  url: "https://grepair.com",
+    "Gadget Repair provides professional laptop repair, mobile phone repair, and CCTV camera installation across Milton Keynes and surrounding areas.",
+  url: "https://gadgetrepair.uk",
   area: "Milton Keynes",
   nearbyAreas: [
     "Bletchley",
@@ -18,7 +18,7 @@ export const siteConfig = {
     "Bedford",
   ],
   phone: "07777168239",
-  email: "grepair90@gmail.com",
+  email: "info@gadgetrepair.uk",
   address: {
     street: "49 Westhill Stantonbury",
     locality: "Milton Keynes",
