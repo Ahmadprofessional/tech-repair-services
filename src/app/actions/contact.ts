@@ -9,7 +9,7 @@ const contactSchema = z.object({
   service: z.enum(["laptop-repair", "mobile-repair", "cctv-installation", "other"], {
     message: "Please select a service",
   }),
-  message: z.string().min(10, "Message must be at least 10 characters").max(1000),
+  message: z.string().min(1, "Please enter a message").max(1000),
 });
 
 export type ContactFormState = {

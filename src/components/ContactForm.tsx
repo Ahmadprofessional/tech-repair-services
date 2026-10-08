@@ -140,9 +140,15 @@ export function ContactForm() {
 
       {/* ReCAPTCHA */}
       <div className="flex justify-start">
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-        />
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ? (
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          />
+        ) : (
+          <div className="text-sm text-rec p-3 border border-rec/30 bg-rec/10">
+            ReCAPTCHA configuration is missing. Please add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to your environment variables.
+          </div>
+        )}
       </div>
 
       {/* Submit */}
