@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import { trackEvent, getServiceFromPath } from "@/lib/tracking";
 
 interface WhatsAppButtonProps {
   message?: string;
@@ -17,6 +19,15 @@ export function WhatsAppButton({
   children,
 }: WhatsAppButtonProps) {
   const url = getWhatsAppUrl(message);
+  const pathname = usePathname();
+
+  const handleWhatsAppClick = () => {
+    trackEvent({
+      event: "whatsapp_click",
+      page_path: pathname || "",
+      service: getServiceFromPath(pathname || ""),
+    });
+  };
 
   const baseStyles =
     "inline-flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2";
@@ -34,6 +45,7 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       className={`${baseStyles} ${variants[variant]} ${className}`}
       aria-label="Chat on WhatsApp"
+      onClick={handleWhatsAppClick}
     >
       <svg
         width="18"

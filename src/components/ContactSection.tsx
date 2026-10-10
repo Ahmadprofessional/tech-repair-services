@@ -5,6 +5,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Reveal } from "@/components/Reveal";
 import { Marker } from "@/components/Marker";
 import Link from "next/link";
+import { TrackingLink } from "@/components/TrackingLink";
 
 export function ContactSection() {
   return (
@@ -62,23 +63,25 @@ export function ContactSection() {
                     <span className="font-mono-label text-line-dark block mb-1">
                       PHONE
                     </span>
-                    <a
+                    <TrackingLink
+                      eventType="phone_click"
                       href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                       className="text-paper text-lg transition-colors hover:text-accent"
                     >
                       {siteConfig.phone}
-                    </a>
+                    </TrackingLink>
                   </div>
                   <div>
                     <span className="font-mono-label text-line-dark block mb-1">
                       EMAIL
                     </span>
-                    <a
+                    <TrackingLink
+                      eventType="email_click"
                       href={`mailto:${siteConfig.email}`}
                       className="text-paper text-lg transition-colors hover:text-accent"
                     >
                       {siteConfig.email}
-                    </a>
+                    </TrackingLink>
                   </div>
                   <div>
                     <span className="font-mono-label text-line-dark block mb-1">

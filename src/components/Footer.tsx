@@ -4,6 +4,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { services } from "@/data/services";
 import { Marker } from "@/components/Marker";
+import { TrackingLink } from "@/components/TrackingLink";
 
 export function Footer() {
   return (
@@ -46,20 +47,22 @@ export function Footer() {
             <h3 className="font-mono-label text-line-light mb-4">Contact</h3>
             <ul className="flex flex-col gap-2 text-sm text-muted">
               <li>
-                <a
+                <TrackingLink
+                  eventType="phone_click"
                   href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                   className="transition-colors hover:text-paper"
                 >
                   {siteConfig.phone}
-                </a>
+                </TrackingLink>
               </li>
               <li>
-                <a
+                <TrackingLink
+                  eventType="email_click"
                   href={`mailto:${siteConfig.email}`}
                   className="transition-colors hover:text-paper"
                 >
                   {siteConfig.email}
-                </a>
+                </TrackingLink>
               </li>
               <li>
                 <Link

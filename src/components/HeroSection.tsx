@@ -6,6 +6,7 @@ import { RecDot } from "@/components/RecDot";
 import { Marker } from "@/components/Marker";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { siteConfig } from "@/config/site";
+import { TrackingLink } from "@/components/TrackingLink";
 
 export function HeroSection() {
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -124,12 +125,13 @@ export function HeroSection() {
               <div className="absolute -left-3 -top-3 w-2 h-2 border-t border-l border-accent opacity-50" />
               <div className="absolute -right-3 -bottom-3 w-2 h-2 border-b border-r border-accent opacity-50" />
               <WhatsAppButton />
-              <a
+              <TrackingLink
+                eventType="phone_click"
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                 className="font-mono-label text-[#F5F3EC] transition-colors hover:text-accent"
               >
                 Or Call for a Fixed Quote
-              </a>
+              </TrackingLink>
             </div>
           </div>
 

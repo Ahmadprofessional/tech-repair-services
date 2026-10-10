@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { ContactForm } from "@/components/ContactForm";
 import { Marker } from "@/components/Marker";
+import { TrackingLink } from "@/components/TrackingLink";
 
 export const metadata: Metadata = {
   title: "Get in Touch",
@@ -44,22 +45,24 @@ export default function ContactPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <Marker variant="brackets" dark className="p-6">
                   <span className="font-mono-label text-line-dark block mb-2">PHONE</span>
-                  <a
+                  <TrackingLink
+                    eventType="phone_click"
                     href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                     className="text-ink text-lg transition-colors hover:text-accent"
                   >
                     {siteConfig.phone}
-                  </a>
+                  </TrackingLink>
                 </Marker>
                 
                 <Marker variant="brackets" dark className="p-6">
                   <span className="font-mono-label text-line-dark block mb-2">EMAIL</span>
-                  <a
+                  <TrackingLink
+                    eventType="email_click"
                     href={`mailto:${siteConfig.email}`}
                     className="text-ink text-lg transition-colors hover:text-accent"
                   >
                     {siteConfig.email}
-                  </a>
+                  </TrackingLink>
                 </Marker>
               </div>
             </div>

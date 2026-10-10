@@ -15,6 +15,17 @@ export function CookieBanner() {
   const handleConsent = (level: "all" | "essential") => {
     localStorage.setItem("cookie-consent", level);
     setShow(false);
+
+    if (typeof window !== "undefined" && window.gtag) {
+      if (level === "all") {
+        window.gtag("consent", "update", {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted",
+        });
+      }
+    }
   };
 
   if (!show) return null;

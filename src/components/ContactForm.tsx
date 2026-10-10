@@ -1,15 +1,31 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { submitContactForm, type ContactFormState } from "@/app/actions/contact";
 import { services } from "@/data/services";
 import { Marker } from "@/components/Marker";
+import { usePathname } from "next/navigation";
+import { trackEvent, getServiceFromPath } from "@/lib/tracking";
 
 const initialState: ContactFormState = { success: false };
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
+  const hasFiredLead = useRef(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (state.success && !hasFiredLead.current) {
+      hasFiredLead.current = true;
+      trackEvent({
+        event: "generate_lead",
+        form_name: "contact_form",
+        page_path: pathname || "",
+        service: getServiceFromPath(pathname || ""),
+      });
+    }
+  }, [state.success, pathname]);
 
   if (state.success) {
     return (
