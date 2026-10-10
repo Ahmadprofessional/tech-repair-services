@@ -130,7 +130,7 @@ export function HeroSection() {
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
                 className="font-mono-label text-[#F5F3EC] transition-colors hover:text-accent"
               >
-                Or Call for a Fixed Quote
+                Or Call {siteConfig.phone}
               </TrackingLink>
             </div>
           </div>
