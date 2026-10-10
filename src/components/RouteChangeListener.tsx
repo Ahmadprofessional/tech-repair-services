@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 
 export function RouteChangeListener() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const isInitialLoad = useRef(true);
 
   useEffect(() => {
@@ -17,14 +16,13 @@ export function RouteChangeListener() {
     }
     
     if (pathname) {
-      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
       trackEvent({
         event: "page_view",
-        page_path: url,
+        page_path: pathname,
         page_title: document.title,
       });
     }
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return null;
 }
