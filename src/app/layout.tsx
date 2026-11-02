@@ -8,6 +8,7 @@ import { Cursor } from "@/components/Cursor";
 import { LenisProvider } from "@/components/LenisProvider";
 import { JsonLd } from "@/components/JsonLd";
 import { CookieBanner } from "@/components/CookieBanner";
+import { FloatingContactBar } from "@/components/FloatingContactBar";
 import Script from "next/script";
 import { RouteChangeListener } from "@/components/RouteChangeListener";
 
@@ -107,9 +108,12 @@ export default function RootLayout({
           <Cursor />
           <RouteChangeListener />
           <Header />
-          <main>{children}</main>
-          <Footer />
+          <main className="pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">{children}</main>
+          <div className="pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
+            <Footer />
+          </div>
         </LenisProvider>
+        <FloatingContactBar />
         <CookieBanner />
         <JsonLd />
       </body>

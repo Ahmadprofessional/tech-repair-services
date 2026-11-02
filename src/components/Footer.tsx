@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { services } from "@/data/services";
-import { Marker } from "@/components/Marker";
 import { TrackingLink } from "@/components/TrackingLink";
 
 export function Footer() {
@@ -48,8 +47,9 @@ export function Footer() {
             <ul className="flex flex-col gap-2 text-sm text-muted">
               <li>
                 <TrackingLink
-                  eventType="phone_click"
-                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                  eventType="call_click"
+                  location="footer"
+                  href="tel:+447777168239"
                   className="transition-colors hover:text-paper"
                 >
                   {siteConfig.phone}

@@ -3,12 +3,19 @@
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { trackEvent, getServiceFromPath } from "@/lib/tracking";
+import {
+  trackConversion,
+  getServiceFromPath,
+  type TrackingLocation,
+  type TrackingService,
+} from "@/lib/tracking";
 
 interface WhatsAppButtonProps {
   message?: string;
   className?: string;
   variant?: "primary" | "outline";
+  location?: TrackingLocation;
+  service?: TrackingService;
   children?: React.ReactNode;
 }
 
@@ -16,16 +23,19 @@ export function WhatsAppButton({
   message = "Hi, I'd like to enquire about your services. (via website)",
   className = "",
   variant = "primary",
+  location = "hero",
+  service,
   children,
 }: WhatsAppButtonProps) {
   const url = getWhatsAppUrl(message);
   const pathname = usePathname();
 
   const handleWhatsAppClick = () => {
-    trackEvent({
+    trackConversion({
       event: "whatsapp_click",
+      location,
       page_path: pathname || "",
-      service: getServiceFromPath(pathname || ""),
+      service: service ?? getServiceFromPath(pathname || ""),
     });
   };
 
