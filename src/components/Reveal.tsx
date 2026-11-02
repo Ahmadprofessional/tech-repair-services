@@ -29,8 +29,8 @@ export function Reveal({
     ).matches;
 
     if (prefersReduced) {
-      setIsVisible(true);
-      return;
+      const raf = requestAnimationFrame(() => setIsVisible(true));
+      return () => cancelAnimationFrame(raf);
     }
 
     const observer = new IntersectionObserver(

@@ -46,8 +46,9 @@ export default function ContactPage() {
                 <Marker variant="brackets" dark className="p-6">
                   <span className="font-mono-label text-line-dark block mb-2">PHONE</span>
                   <TrackingLink
-                    eventType="phone_click"
-                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                    eventType="call_click"
+                    location="form"
+                    href="tel:+447777168239"
                     className="text-ink text-lg transition-colors hover:text-accent"
                   >
                     {siteConfig.phone}

@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { RecDot } from "@/components/RecDot";
-import { Marker } from "@/components/Marker";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { siteConfig } from "@/config/site";
 import { TrackingLink } from "@/components/TrackingLink";
@@ -124,10 +123,11 @@ export function HeroSection() {
               {/* Corner brackets attached strictly to CTA focus area */}
               <div className="absolute -left-3 -top-3 w-2 h-2 border-t border-l border-accent opacity-50" />
               <div className="absolute -right-3 -bottom-3 w-2 h-2 border-b border-r border-accent opacity-50" />
-              <WhatsAppButton />
+              <WhatsAppButton location="hero" />
               <TrackingLink
-                eventType="phone_click"
-                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                eventType="call_click"
+                location="hero"
+                href="tel:+447777168239"
                 className="font-mono-label text-[#F5F3EC] transition-colors hover:text-accent"
               >
                 Or Call {siteConfig.phone}
